@@ -26,28 +26,28 @@ export function AdminDrive({ session, initialConfig, initialProvider }: AdminDri
   return (
       <div className="space-y-6">
         <div>
-          <h2 className="text-2xl font-semibold">Drive</h2>
-          <p className="text-muted-foreground">Enable Drive and configure workspace or user storage.</p>
+          <h2 className="text-2xl font-semibold">Lưu trữ Drive</h2>
+          <p className="text-muted-foreground">Kích hoạt Drive và cấu hình không gian làm việc hoặc lưu trữ người dùng.</p>
         </div>
 
         <Card>
           <CardHeader>
-            <CardTitle>Drive Settings</CardTitle>
-            <CardDescription>Enable Drive and choose storage options.</CardDescription>
+            <CardTitle>Cài đặt Lưu trữ Drive</CardTitle>
+            <CardDescription>Kích hoạt Lưu trữ Drive và chọn các tùy chọn lưu trữ.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="flex items-center justify-between gap-4">
               <div className="space-y-1">
-                <Label htmlFor="drive-enabled">Enable Drive</Label>
-                <p className="text-sm text-muted-foreground">Turn on file storage features.</p>
+                  <Label htmlFor="drive-enabled">Kích hoạt Lưu trữ Drive</Label>
+                <p className="text-sm text-muted-foreground">Kích hoạt tính năng lưu trữ tệp.</p>
               </div>
               <Switch id="drive-enabled" checked={enabled} onCheckedChange={setEnabled} />
             </div>
 
             <div className="flex items-center justify-between gap-4">
               <div className="space-y-1">
-                <Label htmlFor="workspace-enabled">Enable workspace level storage</Label>
-                <p className="text-sm text-muted-foreground">Use a single provider for all users.</p>
+                <Label htmlFor="workspace-enabled">Kích hoạt lưu trữ cấp độ không gian làm việc</Label>
+                <p className="text-sm text-muted-foreground">Sử dụng một nhà cung cấp cho tất cả người dùng.</p>
               </div>
               <Switch id="workspace-enabled" checked={workspace.enabled} onCheckedChange={setWorkspaceEnabled} />
             </div>
@@ -55,8 +55,8 @@ export function AdminDrive({ session, initialConfig, initialProvider }: AdminDri
             {workspace.enabled && (
               <div className="flex items-center justify-between gap-4">
                 <div className="space-y-1">
-                  <Label htmlFor="workspace-provider">Workspace provider</Label>
-                  <p className="text-sm text-muted-foreground">Select where file bytes are stored.</p>
+                  <Label htmlFor="workspace-provider">Cung cấp việc lưu trữ</Label>
+                  <p className="text-sm text-muted-foreground">Chọn nơi lưu trữ tệp.</p>
                 </div>
                 <Select value={workspace.provider} onValueChange={(v) => setWorkspaceProvider(v as 'local' | 'aws' | 'azure')}>
                   <SelectTrigger id="workspace-provider" className="min-w-56">
@@ -73,12 +73,12 @@ export function AdminDrive({ session, initialConfig, initialProvider }: AdminDri
 
             <div className="flex items-center justify-between gap-4">
               <div className="space-y-1">
-                <Label htmlFor="user-enabled">Enable user level storage</Label>
-                <p className="text-sm text-muted-foreground">User integration with Google Drive or Microsoft OneDrive.</p>
+                <Label htmlFor="user-enabled">Kích hoạt lưu trữ cấp độ người dùng</Label>
+                <p className="text-sm text-muted-foreground">Tích hợp với Google Drive hoặc Microsoft OneDrive.</p>
               </div>
               <Switch id="user-enabled" checked={user.enabled} onCheckedChange={setUserEnabled} />
             </div>
-            <p className="text-xs text-muted-foreground">Settings save automatically.</p>
+            <p className="text-xs text-muted-foreground">Cài đặt được lưu tự động.</p>
           </CardContent>
         </Card>
       </div>

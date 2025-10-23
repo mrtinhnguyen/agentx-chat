@@ -23,35 +23,35 @@ export const API_ENDPOINTS = {
 } as const
 
 export const MESSAGES = {
-  LOADING_CONNECTIONS: 'Loading connections...',
-  SAVE_OPENAI_CONNECTIONS: 'Save',
-  CLEAR_ALL: 'Clear All',
-  TEST_CONNECTION: 'Test Connection',
-  SAVE: 'Save',
-  SAVING: 'Saving...',
-  DELETE: 'Delete',
-  EDIT: 'Edit',
-  CONNECTIONS_TITLE: 'Connections',
-  CONNECTIONS_DESCRIPTION: 'Manage your OpenAI & Ollama connections and endpoints',
-  OPENAI_CONNECTIONS_TITLE: 'OpenAI API Connections',
-  OLLAMA_CONNECTION_TITLE: 'Ollama Connection',
-  BASE_URL_LABEL: 'Base URL',
-  API_KEY_LABEL: 'API Key',
-  ACTIONS_LABEL: 'Actions'
+  LOADING_CONNECTIONS: 'Đang tải kết nối...',
+  SAVE_OPENAI_CONNECTIONS: 'Lưu',
+  CLEAR_ALL: 'Xóa tất cả',
+  TEST_CONNECTION: 'Kiểm tra kết nối',
+  SAVE: 'Lưu',
+  SAVING: 'Đang lưu...',
+  DELETE: 'Xóa',
+  EDIT: 'Sửa',
+  CONNECTIONS_TITLE: 'Kết nối',
+  CONNECTIONS_DESCRIPTION: 'Quản lý kết nối OpenAI & Ollama và điểm cuối',
+  OPENAI_CONNECTIONS_TITLE: 'Kết nối OpenAI API',
+  OLLAMA_CONNECTION_TITLE: 'Kết nối Ollama',
+  BASE_URL_LABEL: 'URL cơ sở',
+  API_KEY_LABEL: 'API key',
+  ACTIONS_LABEL: 'Hành động'
 } as const
 
 export const TOAST_MESSAGES = {
-  CONNECTIONS_LOADED: 'Connections loaded successfully',
-  CONNECTION_SAVED: 'Connection saved',
-  CONNECTION_UPDATED: 'Connection updated',
-  CONNECTION_DELETED: 'Connection deleted successfully',
-  CONNECTION_TEST_SUCCESSFUL: 'Connection test successful',
-  CONNECTION_TEST_SUCCESSFUL_SYNC: 'Connected',
-  CONNECTION_TEST_FAILED: 'Connection test failed',
-  SAVE_FAILED: 'Failed to save connections',
-  UPDATE_FAILED: 'Failed to update connection',
-  DELETE_FAILED: 'Failed to delete connection',
-  FILL_COMPLETE_CONNECTION: 'Please fill in at least one complete connection',
-  ENTER_BASE_URL: 'Please enter a Base URL first',
-  CONNECTION_TEST_PASSED_SAVE_FAILED: 'Connection test passed but failed to save'
+  CONNECTIONS_LOADED: 'Kết nối đã được tải thành công',
+  CONNECTION_SAVED: 'Kết nối đã được lưu',
+  CONNECTION_UPDATED: 'Kết nối đã được cập nhật',
+  CONNECTION_DELETED: 'Kết nối đã được xóa thành công',
+  CONNECTION_TEST_SUCCESSFUL: 'Kết nối đã được kiểm tra thành công',
+  CONNECTION_TEST_SUCCESSFUL_SYNC: 'Đã kết nối',
+  CONNECTION_TEST_FAILED: 'Đã xảy ra lỗi khi kiểm tra kết nối',
+  SAVE_FAILED: 'Đã xảy ra lỗi khi lưu kết nối',
+  UPDATE_FAILED: 'Đã xảy ra lỗi khi cập nhật kết nối',
+  DELETE_FAILED: 'Đã xảy ra lỗi khi xóa kết nối',
+  FILL_COMPLETE_CONNECTION: 'Vui lòng nhập ít nhất một kết nối đầy đủ',
+  ENTER_BASE_URL: 'Vui lòng nhập URL cơ sở trước',
+  CONNECTION_TEST_PASSED_SAVE_FAILED: 'Kết nối đã được kiểm tra thành công nhưng đã xảy ra lỗi khi lưu'
 } as const

@@ -26,17 +26,17 @@ export function CreateFolderDialog({ open, onOpenChange, parent = "" }: CreateFo
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>New folder</DialogTitle>
-          <DialogDescription>Create a new folder in the current location.</DialogDescription>
+          <DialogTitle>Thư mục mới</DialogTitle>
+          <DialogDescription>Tạo một thư mục mới tại vị trí hiện tại.</DialogDescription>
         </DialogHeader>
         <form action={onSubmit} className="space-y-3">
           <input type="hidden" name="parent" value={parent} />
           <div className="space-y-2">
-            <Label htmlFor="folder-name">Folder name</Label>
-            <Input id="folder-name" name="name" placeholder="e.g. documents" required />
+            <Label htmlFor="folder-name">Tên thư mục</Label>
+            <Input id="folder-name" name="name" placeholder="ví dụ: tài liệu" required />
           </div>
           <div className="flex justify-end">
-            <SaveStatusButton label="Create" />
+            <SaveStatusButton label="Tạo" />
           </div>
         </form>
       </DialogContent>

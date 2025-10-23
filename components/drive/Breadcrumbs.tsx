@@ -16,7 +16,7 @@ function Crumb({ id, name, isLast }: { id: string; name: string; isLast: boolean
       ref={setNodeRef}
       onClick={() => router.push(`/drive/folder/${encodeURIComponent(id)}`)}
       className={`inline-flex items-center rounded-full px-3 py-1.5 text-base hover:bg-muted ${isOver ? 'ring-2 ring-primary/50' : ''} ${isLast ? 'font-semibold' : ''}`}
-      aria-label={`Go to ${name}`}
+      aria-label={`Đi đến ${name}`}
     >
       <span className="truncate max-w-[220px]">{name}</span>
     </button>

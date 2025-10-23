@@ -74,7 +74,7 @@ export function SearchInfinite({ initialItems, initialNextOffset, initialHasMore
   return (
     <div className={cn("relative w-full", className)}>
       {items.length === 0 ? (
-        <div className="text-sm text-muted-foreground">No chats yet</div>
+        <div className="text-sm text-muted-foreground">Chưa có cuộc trò chuyện</div>
       ) : (
         <div className="md:h-[85vh] overflow-y-auto scrollbar-hide pr-0 md:pr-[540px]">
           <ul className="space-y-2">
@@ -86,7 +86,7 @@ export function SearchInfinite({ initialItems, initialNextOffset, initialHasMore
               >
                 <Link href={`/c/${c.id}`} className="block">
                   <div className="flex items-center justify-between gap-3">
-                    <div className="text-sm font-medium truncate">{c.title || "Untitled"}</div>
+                    <div className="text-sm font-medium truncate">{c.title || "Không có tiêu đề"}</div>
                     <div className="text-xs text-muted-foreground whitespace-nowrap">{formatDate(c.updatedAt as any)}</div>
                   </div>
                 </Link>
@@ -94,7 +94,7 @@ export function SearchInfinite({ initialItems, initialNextOffset, initialHasMore
             ))}
           </ul>
           <div ref={sentinelRef} className="h-10" />
-          {loading && <div className="mt-2 text-xs text-muted-foreground">Loading…</div>}
+          {loading && <div className="mt-2 text-xs text-muted-foreground">Đang tải…</div>}
         </div>
       )}
 

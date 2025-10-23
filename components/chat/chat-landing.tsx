@@ -125,7 +125,7 @@ export function ChatLanding({
                 <div className="flex items-center justify-center gap-4">
                   <Avatar className="h-12 w-12">
                     <AvatarImage
-                      src={selectedModel.meta?.profile_image_url || "/OpenChat.png"}
+                      src={selectedModel.meta?.profile_image_url || "/ai-agents.gif"}
                       alt={selectedModel.name}
                     />
                     <AvatarFallback>
@@ -139,10 +139,10 @@ export function ChatLanding({
               ) : (
                 <>
                   <h1 className="text-4xl font-semibold mb-4">
-                    How can I help you today?
+                   Tôi có thể giúp bạn thế nào hôm nay?
                   </h1>
                   <p className="text-muted-foreground text-lg">
-                    Start a conversation with AI
+                    Bắt đầu một cuộc trò chuyện với AI
                   </p>
                 </>
               )}
@@ -150,7 +150,7 @@ export function ChatLanding({
 
             <div className="w-full">
               <ChatInput
-                placeholder={"Ask me anything..."}
+                placeholder={"Hỏi tôi bất cứ điều gì..."}
                 onSubmit={(value) => { void beginChat(value) }}
                 disabled={false}
                 sessionStorageKey={'chat-input'}
@@ -169,7 +169,7 @@ export function ChatLanding({
             {!selectedModel && (
               <div className="text-center mt-4">
                 <p className="text-sm text-muted-foreground">
-                  Please select a model from the dropdown above to get started.
+                  Vui lòng chọn một mô hình từ danh sách bên trên để bắt đầu.
                 </p>
               </div>
             )}

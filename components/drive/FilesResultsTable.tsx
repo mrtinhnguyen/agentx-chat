@@ -440,10 +440,10 @@ export function FilesResultsTable({ entries, parentName, parentId, breadcrumb, i
         </colgroup>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[45%]">Name</TableHead>
-            <TableHead className="w-[15%]">Owner</TableHead>
-            <TableHead className="w-[15%]">Last Modified</TableHead>
-            <TableHead className="w-[15%]">Location</TableHead>
+            <TableHead className="w-[45%]">Tên</TableHead>
+            <TableHead className="w-[15%]">Người sở hữu</TableHead>
+            <TableHead className="w-[15%]">Cập nhật gần nhất</TableHead>
+            <TableHead className="w-[15%]">Vị trí lưu</TableHead>
             <TableHead className="w-[10%] text-right"></TableHead>
           </TableRow>
         </TableHeader>
@@ -460,7 +460,7 @@ export function FilesResultsTable({ entries, parentName, parentId, breadcrumb, i
           <TableBody>
             {entries.length === 0 ? (
               <TableRow>
-               <TableCell colSpan={5} className="text-muted-foreground">No results</TableCell>
+               <TableCell colSpan={5} className="text-muted-foreground">Không có kết quả</TableCell>
               </TableRow>
           ) : (
             entries.map((item) => (
@@ -529,16 +529,16 @@ export function FilesResultsTable({ entries, parentName, parentId, breadcrumb, i
       <AlertDialog open={!!restoreFolderId} onOpenChange={(next) => { if (!next) setRestoreFolderId(null) }}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Restore folder?</AlertDialogTitle>
+            <AlertDialogTitle>Khôi phục thư mục?</AlertDialogTitle>
             <AlertDialogDescription>
-              This folder will be moved out of Trash. You will be redirected to it after restore.
+             Thư mục này sẽ được chuyển khỏi Thùng rác. Bạn sẽ được chuyển đến vị trí thư mục ngay sau khi khôi phục. 
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel>Hủy</AlertDialogCancel>
             <form action={restoreFolderFromTrashSubmitAction} method="post">
               <input type="hidden" name="folderId" value={restoreFolderId ?? ''} />
-              <Button type="submit">Restore</Button>
+              <Button type="submit">Khôi phục</Button>
             </form>
           </AlertDialogFooter>
         </AlertDialogContent>
@@ -591,7 +591,7 @@ export function FilesResultsTable({ entries, parentName, parentId, breadcrumb, i
             return (
               <div className="inline-flex pointer-events-none rounded-full border bg-muted text-foreground shadow-md px-3 py-1.5 text-sm items-center gap-2 w-auto">
                 <FaFolder className="h-4 w-4" />
-                <span className="font-medium">{selected.size} items</span>
+                <span className="font-medium">{selected.size} tài liệu/thư mục</span>
               </div>
             )
           }
@@ -674,20 +674,20 @@ function RowItem({ item, parentName, selected, onRowClick, onRowDoubleClick, set
         )}
         <span className="truncate flex-1 min-w-0">{item.name}</span>
         {!item.isDirectory && item.ownedByMe === false && (
-          <span title="Shared with me" className="flex-shrink-0">
+          <span title="Chia sẻ với tôi" className="shrink-0">
             <Users className="h-4 w-4 text-blue-500" />
           </span>
         )}
       </TableCell>
-      <TableCell className="w-[15%]">You</TableCell>
-      <TableCell className="w-[15%]">{new Date(item.modifiedMs).toLocaleString('en-US', { timeZone: 'UTC', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true })}</TableCell>
+      <TableCell className="w-[15%]">Bạn</TableCell>
+      <TableCell className="w-[15%]">{new Date(item.modifiedMs).toLocaleString('en-US', { timeZone: 'UTC+7', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: '2-digit', second: '2-digit', hour12: true })}</TableCell>
       <TableCell className="w-[15%] min-w-0">
         <span className="block truncate">{parentName ? `/${parentName}` : '/'}</span>
       </TableCell>
       <TableCell className="w-[10%] text-right">
         <div className="flex items-center justify-end gap-1">
           <div className="opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
-            <Button variant="ghost" size="icon" aria-label="Download" onClick={() => {
+            <Button variant="ghost" size="icon" aria-label="Tải về" onClick={() => {
               if (item.isDirectory) {
                 try {
                   const a = document.createElement('a')
@@ -704,12 +704,12 @@ function RowItem({ item, parentName, selected, onRowClick, onRowDoubleClick, set
             }}>
               <Download className="h-4 w-4" />
             </Button>
-            <Button variant="ghost" size="icon" aria-label="Rename" onClick={() => {
+            <Button variant="ghost" size="icon" aria-label="Đổi tên thư mục" onClick={() => {
               if (item.isDirectory) setRenameFolderId(item.id); else setRenameFileId(item.id)
             }}>
               <Pencil className="h-4 w-4" />
             </Button>
-            <Button variant="ghost" size="icon" aria-label="Star" onClick={onToggleStar}>
+            <Button variant="ghost" size="icon" aria-label="Đánh dấu sao" onClick={onToggleStar}>
               {isStarred ? <FaStar className="h-4 w-4" /> : <FaRegStar className="h-4 w-4" />}
             </Button>
           </div>

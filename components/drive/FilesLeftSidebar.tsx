@@ -42,24 +42,24 @@ export function FilesLeftSidebar({ parentId = "", localRootId, googleRootId }: F
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button className="w-full justify-center" disabled={!!isTrash}>
-              <Plus className="mr-2 h-4 w-4" /> New
+              <Plus className="mr-2 h-4 w-4" /> Thêm mới
             </Button>
           </DropdownMenuTrigger>
           {!isTrash && (
           <DropdownMenuContent side="bottom" align="start" className="w-56">
-            <DropdownMenuLabel>Create</DropdownMenuLabel>
+            <DropdownMenuLabel>Tạo</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuItem onSelect={(e) => { e.preventDefault(); setShowNewFolder(true) }}>
               <FolderPlus className="mr-2 h-4 w-4" />
-              <span>New Folder</span>
+              <span>Thư mục mới</span>
             </DropdownMenuItem>
             <DropdownMenuItem onSelect={(e) => { e.preventDefault(); setShowUploadFile(true) }}>
               <FileUp className="mr-2 h-4 w-4" />
-              <span>File Upload</span>
+              <span>Upload tài liệu</span>
             </DropdownMenuItem>
             <DropdownMenuItem onSelect={(e) => { e.preventDefault(); setShowUploadFolder(true) }}>
               <FolderUp className="mr-2 h-4 w-4" />
-              <span>Folder Upload</span>
+              <span>Upload thư mục</span>
             </DropdownMenuItem>
           </DropdownMenuContent>
           )}
@@ -81,11 +81,11 @@ export function FilesLeftSidebar({ parentId = "", localRootId, googleRootId }: F
             label="Google Drive" 
           />
         )}
-        <SidebarLink href="/drive/shared" icon={<Users className="h-4 w-4" />} label="Shared with me" />
+        <SidebarLink href="/drive/shared" icon={<Users className="h-4 w-4" />} label="Chia sẻ cho tôi" />
         <Separator className="my-4"/>
-        <SidebarLink href="/drive/recent" icon={<Clock className="h-4 w-4" />} label="Recent" />
-        <SidebarLink href="/drive/starred" icon={<FaRegStar className="h-4 w-4" />} label="Starred" />
-        <SidebarLink href="/drive/trash" icon={<Trash2 className="h-4 w-4" />} label="Trash" />
+        <SidebarLink href="/drive/recent" icon={<Clock className="h-4 w-4" />} label="Gần đây" />
+        <SidebarLink href="/drive/starred" icon={<FaRegStar className="h-4 w-4" />} label="Đánh dấu quan trọng" />
+        <SidebarLink href="/drive/trash" icon={<Trash2 className="h-4 w-4" />} label="Thùng rác" />
       </nav>
       {showGoogle && <DriveStorageInfo />}
       {!isTrash && (

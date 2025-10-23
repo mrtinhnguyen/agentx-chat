@@ -9,7 +9,7 @@
 ![](https://tokei.rs/b1/github/openchatui/openchat)
 
 
-<h1><img src="assets/OpenChat.png" alt="OpenChat" width="32" height="32" style="vertical-align: middle; margin-bottom: 8px;" /> OpenChat</h1>
+<h1><img src="assets/ai-agents.gif" alt="OpenChat" width="32" height="32" style="vertical-align: middle; margin-bottom: 8px;" /> OpenChat</h1>
 
 **OpenChat is an open source, self-hosted, AI User Interface** with the goal of developing the most **feature rich, free, AI User Interface.**
 

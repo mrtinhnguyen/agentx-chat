@@ -63,26 +63,26 @@ export function SettingsKeys({ session }: SettingsKeysProps) {
           <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
             <Button onClick={() => setIsDialogOpen(true)} className="flex items-center gap-2">
               <Plus className="h-4 w-4" />
-              Create new api key
+              Tạo API key mới
             </Button>
             <DialogContent className="sm:max-w-md">
               <DialogHeader>
-                <DialogTitle>Create API Key</DialogTitle>
+                <DialogTitle>Tạo API Key</DialogTitle>
               </DialogHeader>
               <div className="space-y-2">
                 <label className="text-sm font-medium">{SETTINGS_MESSAGES.KEY_NAME_LABEL}</label>
                 <Input
                   value={keyName}
                   onChange={(e) => setKeyName(e.target.value)}
-                  placeholder="My API Key"
+                  placeholder="API Key của tôi"
                 />
               </div>
               <DialogFooter>
                 <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
-                  Cancel
+                  Hủy
                 </Button>
                 <Button onClick={handleCreate} disabled={isCreating || !keyName.trim()}>
-                  {isCreating ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Create api key'}
+                  {isCreating ? <Loader2 className="h-4 w-4 animate-spin" /> : 'Tạo API key'}
                 </Button>
               </DialogFooter>
             </DialogContent>
@@ -93,11 +93,11 @@ export function SettingsKeys({ session }: SettingsKeysProps) {
         <Dialog open={isSecretDialogOpen} onOpenChange={setIsSecretDialogOpen}>
           <DialogContent className="sm:max-w-md">
             <DialogHeader>
-              <DialogTitle>Your new API key</DialogTitle>
+              <DialogTitle>API key mới của bạn</DialogTitle>
             </DialogHeader>
             <div className="space-y-2">
               <div className="text-sm text-muted-foreground">
-                Copy and store this key now. You won't be able to view it again.
+                Sao chép và lưu trữ key này ngay bây giờ. Bạn sẽ không thể xem nó lại.
               </div>
               <div className="flex items-center gap-2">
                 <div className="flex-1 p-2 border rounded-md bg-muted/50 font-mono text-sm overflow-hidden text-ellipsis whitespace-nowrap">
@@ -108,7 +108,7 @@ export function SettingsKeys({ session }: SettingsKeysProps) {
                   size="sm"
                   onClick={async () => {
                     await navigator.clipboard.writeText(currentSecret)
-                    toast.success('Copied to clipboard')
+                    toast.success('Đã sao chép vào clipboard')
                   }}
                 >
                   <Copy className="h-4 w-4" />
@@ -116,7 +116,7 @@ export function SettingsKeys({ session }: SettingsKeysProps) {
               </div>
             </div>
             <DialogFooter>
-              <Button onClick={() => setIsSecretDialogOpen(false)}>Done</Button>
+              <Button onClick={() => setIsSecretDialogOpen(false)}>Hoàn thành</Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>
@@ -125,10 +125,10 @@ export function SettingsKeys({ session }: SettingsKeysProps) {
           <Table className="table-fixed w-full">
             <TableHeader>
               <TableRow>
-                <TableHead className="w-1/3 min-w-[200px]">Name</TableHead>
-                <TableHead className="w-[340px]">Key</TableHead>
-                <TableHead className="w-[220px]">Created At</TableHead>
-                <TableHead className="w-[200px]">Created By</TableHead>
+                <TableHead className="w-1/3 min-w-[200px]">Tên</TableHead>
+                <TableHead className="w-[340px]">API key</TableHead>
+                <TableHead className="w-[220px]">Ngày tạo</TableHead>
+                <TableHead className="w-[200px]">Người tạo</TableHead>
                 <TableHead className="w-12"></TableHead>
               </TableRow>
             </TableHeader>

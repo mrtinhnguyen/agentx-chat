@@ -25,7 +25,7 @@ export function FilesSearchBar() {
     <div className="w-full flex justify-center my-4">
       <div className="w-3/5">
         <Input
-          placeholder="Search files and folders"
+          placeholder="Tìm kiếm tài liệu hoặc thư mục"
           value={q}
           onChange={onChange}
           className="h-12 rounded-full border-none"

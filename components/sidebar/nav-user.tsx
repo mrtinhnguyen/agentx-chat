@@ -125,32 +125,32 @@ export function NavUser({
               <DropdownMenuItem asChild>
                 <Link prefetch href="/settings">
                   <Settings />
-                  Settings
+                  Cài đặt
                 </Link>
               </DropdownMenuItem>
             <DropdownMenuItem asChild>
               <Link prefetch href="/archive">
                 <Archive />
-                Archive
+                Lưu trữ
               </Link>
             </DropdownMenuItem>
               {user.role === 'ADMIN' && (
                 <DropdownMenuItem asChild>
                   <Link prefetch href="/admin/users">
                     <CgProfile />
-                    Admin Panel
+                    Bảng điều khiển quản trị viên
                   </Link>
                 </DropdownMenuItem>
               )}
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={handleSignOut}>
               <LogOut />
-              Log out
+              Đăng xuất
             </DropdownMenuItem>
             <DropdownMenuSeparator />
             <div className="flex items-center gap-2 px-2 py-1 text-xs text-muted-foreground">
               <span className="inline-block h-2 w-2 rounded-full bg-green-500" />
-              <span>Active Users: {activeUsers ?? '—'}</span>
+              <span>Người dùng hoạt động: {activeUsers ?? '—'}</span>
             </div>
           </DropdownMenuContent>
         </DropdownMenu>

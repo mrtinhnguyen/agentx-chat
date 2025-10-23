@@ -28,11 +28,11 @@ export function ChatPreview({ chat, className, maxMessages = 16 }: ChatPreviewPr
   return (
     <div className={cn("w-full h-full flex flex-col", className)}>
       <div className="px-4 py-3">
-        <div className="text-sm font-medium truncate">{chat.title || 'Untitled'}</div>
+        <div className="text-sm font-medium truncate">{chat.title || 'Không có tiêu đề'}</div>
       </div>
       <div className="flex-1 min-h-0 overflow-y-auto p-4 space-y-4">
         {last.length === 0 && (
-          <div className="text-sm text-muted-foreground">No messages yet</div>
+          <div className="text-sm text-muted-foreground">Chưa có tin nhắn</div>
         )}
         {last.map((m) => {
           const textBlocks = getTextParts(m)

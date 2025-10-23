@@ -8,30 +8,30 @@ export interface SettingsNavItem {
 }
 
 export const SETTINGS_NAV_ITEMS: SettingsNavItem[] = [
-  { id: 'profile', label: 'Profile', href: '/settings/profile', icon: UserCog },
-  { id: 'keys', label: 'API Keys', href: '/settings/keys', icon: KeyRound },
-  { id: 'integrations', label: 'Integrations', href: '/settings/integrations', icon: Blocks },
+  { id: 'profile', label: 'Hồ sơ', href: '/settings/profile', icon: UserCog },
+  { id: 'keys', label: 'API keys', href: '/settings/keys', icon: KeyRound },
+  { id: 'integrations', label: 'Tích hợp', href: '/settings/integrations', icon: Blocks },
 ]
 
 export const SETTINGS_MESSAGES = {
-  TITLE: 'Settings',
-  DESCRIPTION: 'Manage your profile and API access',
-  KEYS_TITLE: 'API Keys',
-  KEYS_DESCRIPTION: 'Create and manage API keys to access the API.',
-  INTEGRATIONS_TITLE: 'Integrations',
-  INTEGRATIONS_DESCRIPTION: 'Connect third-party services like Google Drive.',
-  CREATE_KEY: 'Create API Key',
-  KEY_NAME_LABEL: 'Key name',
-  DELETE: 'Delete',
-  CONFIRM_DELETE: 'Are you sure you want to delete this key?',
-  LOADING_KEYS: 'Loading keys...',
-  NO_KEYS: 'No API keys yet. Create one to get started.',
+  TITLE: 'Cài đặt',
+  DESCRIPTION: 'Quản lý hồ sơ và truy cập API',
+  KEYS_TITLE: 'API keys',
+  KEYS_DESCRIPTION: 'Tạo và quản lý API keys để truy cập API.',
+  INTEGRATIONS_TITLE: 'Tích hợp',
+  INTEGRATIONS_DESCRIPTION: 'Kết nối các dịch vụ thứ ba như Google Drive.',
+  CREATE_KEY: 'Tạo API key',
+  KEY_NAME_LABEL: 'Tên key',
+  DELETE: 'Xóa',
+  CONFIRM_DELETE: 'Bạn có chắc chắn muốn xóa key này?',
+  LOADING_KEYS: 'Đang tải keys...',
+  NO_KEYS: 'Không có API keys. Tạo một để bắt đầu.',
 } as const
 
 export const TOAST = {
-  KEY_CREATED: 'API key created. Copy it now; it will not be shown again.',
-  KEY_DELETED: 'API key deleted.',
-  ERROR_GENERIC: 'Something went wrong.',
+  KEY_CREATED: 'API key đã được tạo. Sao chép nó ngay bây giờ; nó sẽ không được hiển thị lại.',
+  KEY_DELETED: 'API key đã được xóa.',
+  ERROR_GENERIC: 'Đã xảy ra lỗi.',
 }
 
 

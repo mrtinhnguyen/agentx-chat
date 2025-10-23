@@ -34,49 +34,19 @@ import type { ChatData } from "@/lib/modules/chat"
 const data = {
   mainButtons: [
     {
-      title: "New Chat",
+      title: "Hội thoại mới",
       url: "/",
       icon: MessageSquarePlus,
       type: "button" as const,
     },
     {
-      title: "Search",
-      url: "/search",
-      icon: Search,
-      type: "button" as const,
-    },
-    {
-      title: "Drive",
+      title: "Lưu trữ dữ liệu",
       url: "/drive",
       icon: RiHardDrive3Line,
       type: "button" as const,
-    },
-    {
-      title: "Workspaces",
-      url: "#",
-      icon: Users,
-      type: "button" as const,
-    },
+    }
   ],
-  sections: [
-    {
-      title: "Channels",
-      url: "#",
-      type: "collapse" as const,
-      items: [
-        {
-          title: "test",
-          url: "#",
-          icon: Hash,
-        },
-        {
-          title: "ideas",
-          url: "#",
-          icon: Hash,
-        },
-      ],
-    },
-  ]
+  sections: []
 }
 
 interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
@@ -89,7 +59,7 @@ interface AppSidebarProps extends React.ComponentProps<typeof Sidebar> {
 export function AppSidebar({ session, initialChats = [], pinnedModels = [], timeZone = 'UTC', ...props }: AppSidebarProps) {
   const { state } = useSidebar()
   const user = {
-    name: session?.user?.name || "User",
+    name: session?.user?.name || "Người dùng",
     email: session?.user?.email || "",
     avatar: session?.user?.image || undefined,
     // Role comes from session.user.role via JWT; may be undefined for guests

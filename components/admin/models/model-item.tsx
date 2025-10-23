@@ -16,7 +16,7 @@ interface ModelItemProps {
 }
 
 export function ModelItem({ model, onToggleActive, onUpdateModel, isUpdating }: ModelItemProps) {
-  const profileImageUrl = model.meta?.profile_image_url || "/OpenChat.png"
+  const profileImageUrl = model.meta?.profile_image_url || "/ai-agents.gif"
 
   return (
     <div className="flex items-center justify-between p-4 border rounded-lg hover:bg-muted/50 transition-colors">

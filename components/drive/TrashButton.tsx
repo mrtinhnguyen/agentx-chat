@@ -32,12 +32,12 @@ export function TrashButton({ onConfirm, asMenuItem = false, showLabel = true, c
         {asMenuItem ? (
           <ContextMenuItem disabled={disabled} onSelect={(e) => { e.preventDefault() }}>
             <Trash2 className="mr-2 h-4 w-4" />
-            {showLabel ? "Move to Trash" : null}
+            {showLabel ? "Di chuyển đến thùng rác" : null}
           </ContextMenuItem>
         ) : (
           <Button variant="ghost" size={showLabel ? "default" : "icon"} disabled={disabled}>
             <Trash2 className="h-4 w-4" />
-            {showLabel ? <span className="ml-2">Move to Trash</span> : null}
+            {showLabel ? <span className="ml-2">Di chuyển đến thùng rác</span> : null}
           </Button>
         )}
       </AlertDialogTrigger>
@@ -49,16 +49,16 @@ export function TrashButton({ onConfirm, asMenuItem = false, showLabel = true, c
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogCancel>Hủy</AlertDialogCancel>
           {formAction ? (
             <form action={formAction} className="inline-flex">
               {hiddenFields && Object.entries(hiddenFields).map(([k, v]) => (
                 <input key={k} type="hidden" name={k} value={v} />
               ))}
-              <AlertDialogAction type="submit">Move to Trash</AlertDialogAction>
+              <AlertDialogAction type="submit">Di chuyển đến thùng rác</AlertDialogAction>
             </form>
           ) : (
-            <AlertDialogAction onClick={() => { if (onConfirm) void onConfirm() }}>Move to Trash</AlertDialogAction>
+            <AlertDialogAction onClick={() => { if (onConfirm) void onConfirm() }}>Di chuyển đến thùng rác</AlertDialogAction>
           )}
         </AlertDialogFooter>
       </AlertDialogContent>

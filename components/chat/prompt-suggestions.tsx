@@ -9,40 +9,40 @@ interface PromptSuggestion {
 
 const SUGGESTIONS: PromptSuggestion[] = [
   {
-    title: "Help me study",
-    description: "Summarize key concepts from notes",
+    title: "Giúp tôi học",
+    description: "Tóm tắt các khái niệm chính từ ghi chú",
     prompt_message:
-      "I need help studying a topic. Ask me what subject I'm studying, then create a concise study guide with: key concepts, short summaries, practical examples, and 5 practice questions with answers. Include a spaced-repetition schedule.",
+      "Tôi cần giúp đỡ trong việc học một chủ đề. Hỏi tôi về chủ đề tôi đang học, sau đó tạo một hướng dẫn học tập ngắn gọn với: khái niệm chính, tóm tắt ngắn, ví dụ thực tế, và 5 câu hỏi thực hành với đáp án. Bao gồm lịch trình lặp lại.",
   },
   {
-    title: "Write an email",
-    description: "Polite, concise, professional email",
+    title: "Viết email",
+    description: "Email lịch sự, ngắn gọn, chuyên nghiệp",
     prompt_message:
-      "Draft a concise, professional email. Ask me for the recipient, goal, tone, and key points. Provide a subject line and three variations, then the final email.",
+      "Viết một email ngắn gọn, chuyên nghiệp. Hỏi tôi về người nhận, mục tiêu, tone, và các điểm chính. Cung cấp tiêu đề và ba biến thể, sau đó email cuối cùng.",
   },
   {
-    title: "Brainstorm ideas",
-    description: "Generate diverse creative approaches",
+    title: "Tư duy sáng tạo",
+    description: "Tạo ra các ý tưởng sáng tạo khác nhau",
     prompt_message:
-      "Help me brainstorm ideas. Ask for my goal, audience, and constraints. Return 10 distinct ideas with pros/cons and a next-step suggestion.",
+      "Giúp tôi tư duy sáng tạo. Hỏi tôi về mục tiêu, đối tượng và ràng buộc. Trả về 10 ý tưởng khác nhau với ưu/nhược điểm và một gợi ý bước tiếp theo.",
   },
   {
-    title: "Debug my code",
-    description: "Diagnose and propose fixes",
+    title: "Debug mã của tôi",
+    description: "Chẩn đoán và đề xuất các giải pháp",
     prompt_message:
-      "I have a bug. Ask me for the error, expected behavior, code snippet, and environment. Provide likely causes, a minimal repro, and step-by-step fixes.",
+      "Tôi có một lỗi. Hỏi tôi về lỗi, hành vi mong đợi, đoạn mã, và môi trường. Cung cấp nguyên nhân có khả năng, một phiên bản tối thiểu, và các giải pháp bước theo.",
   },
   {
-    title: "Improve my writing",
-    description: "Edit for clarity and tone",
+    title: "Cải thiện viết của tôi",
+    description: "Chỉnh sửa cho rõ ràng và tone",
     prompt_message:
-      "I want help improving a paragraph. Ask for the text and desired tone. Return an edited version, bullet feedback, and two stylistic alternatives.",
+      "Tôi muốn giúp đỡ cải thiện một đoạn văn. Hỏi tôi về văn bản và tone mong muốn. Trả về một phiên bản đã chỉnh sửa, phản hồi đầu điểm, và hai phiên bản thể hiện khác nhau.",
   },
   {
-    title: "Plan a trip",
-    description: "Itinerary with budget and tips",
+    title: "Lập kế hoạch cho chuyến đi",
+    description: "Lịch trình với ngân sách và mẹo",
     prompt_message:
-      "Help me plan a trip. Ask for destination, dates, budget, and preferences. Propose a 3-day itinerary with activities, transport tips, and cost estimates.",
+      "Giúp tôi lập kế hoạch cho chuyến đi. Hỏi tôi về điểm đến, ngày, ngân sách, và sở thích. Đề xuất một lịch trình 3 ngày với các hoạt động, mẹo vận chuyển, và ước tính chi phí.",
   },
 ]
 
@@ -56,7 +56,7 @@ export function PromptSuggestions({ onSelect, disabled = false }: PromptSuggesti
     <div className="max-w-2xl mx-auto w-full">
       <div className="flex items-center gap-2 mb-2 text-sm text-muted-foreground">
         <Zap className="h-4 w-4" />
-        <span>Suggestions</span>
+        <span>Gợi ý</span>
       </div>
       <div className="max-h-46 overflow-y-auto scrollbar-hide">
         {SUGGESTIONS.map((s, idx) => (

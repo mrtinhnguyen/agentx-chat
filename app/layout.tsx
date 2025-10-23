@@ -17,8 +17,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "OpenChat",
-  description: "AI Chat Interface for Businesses",
+  title: "AgentX",
+  description: "AgentX is a platform for creating and managing AI agents",
 };
 
 export default function RootLayout({

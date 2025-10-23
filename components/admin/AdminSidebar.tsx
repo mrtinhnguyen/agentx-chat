@@ -39,7 +39,7 @@ export function AdminSidebar({ activeTab, children }: AdminLayoutProps) {
                                             : "text-muted-foreground hover:text-foreground hover:bg-muted"
                                     )}
                                 >
-                                    <Icon className="h-4 w-4 flex-shrink-0" />
+                                    <Icon className="h-4 w-4 shrink-0" />
                                     <span>{item.label}</span>
                                 </Link>
                             )

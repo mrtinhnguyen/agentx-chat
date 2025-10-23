@@ -90,7 +90,7 @@ export function EditModelDialog({ model, isUpdating, onSave, children }: EditMod
   const currentPreview = useMemo(() => {
     if (imageMode === 'upload' && uploadPreview) return uploadPreview
     if (imageMode === 'url' && imageUrl) return imageUrl
-    return "/OpenChat.png"
+    return "/ai-agents.gif"
   }, [imageMode, uploadPreview, imageUrl])
 
   const handleFileChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
@@ -204,7 +204,7 @@ export function EditModelDialog({ model, isUpdating, onSave, children }: EditMod
       </DialogTrigger>
       <DialogContent className="sm:max-w-5xl max-w-[95vw] h-[75vh] overflow-hidden p-0">
         <div className="flex flex-col h-full min-h-0">
-          <DialogHeader className="px-6 pt-6 flex-shrink-0">
+          <DialogHeader className="px-6 pt-6 shrink-0">
             <DialogTitle>Edit Model</DialogTitle>
           </DialogHeader>
           <div className="px-6 pb-6 pt-4 overflow-y-auto flex-1 min-h-0">
@@ -392,7 +392,7 @@ export function EditModelDialog({ model, isUpdating, onSave, children }: EditMod
               </div>
             </div>
           </div>
-          <DialogFooter className="px-6 pb-6 flex-shrink-0">
+          <DialogFooter className="px-6 pb-6 shrink-0">
             <Button variant="ghost" onClick={() => setOpen(false)} disabled={saving || isUpdating}>Cancel</Button>
             <Button onClick={handleSave} disabled={saving || isUpdating || name.trim().length === 0}>
               {saving ? 'Saving…' : 'Save changes'}
@@ -413,7 +413,7 @@ function ImagePickerDialog({ value, onChange, children }: { value: string; onCha
   const preview = useMemo(() => {
     if (mode === 'upload' && dataUrl) return dataUrl
     if (mode === 'url' && url) return url
-    return "/OpenChat.png"
+    return "/ai-agents.gif"
   }, [mode, dataUrl, url])
 
   const handleFileChange = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {

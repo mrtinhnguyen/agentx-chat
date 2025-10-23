@@ -39,14 +39,14 @@ export default function ChatsResultsView({ chats, archived, className }: ChatsRe
   return (
     <div className={cn("relative w-full", className)}>
       {!hasAny ? (
-        <div className="text-sm text-muted-foreground">No results</div>
+        <div className="text-sm text-muted-foreground">Không có kết quả</div>
       ) : (
         <div className="md:h-[85vh] overflow-y-auto pr-0 md:pr-[540px]">
           <div className="space-y-4">
             <div>
-              <div className="mb-2 text-xs font-medium uppercase text-muted-foreground">Chats</div>
+              <div className="mb-2 text-xs font-medium uppercase text-muted-foreground">Cuộc trò chuyện</div>
               {chats.length === 0 ? (
-                <div className="text-sm text-muted-foreground">No results</div>
+                <div className="text-sm text-muted-foreground">Không có kết quả</div>
               ) : (
                 <ul className="space-y-2">
                   {chats.map(c => (
@@ -57,7 +57,7 @@ export default function ChatsResultsView({ chats, archived, className }: ChatsRe
                     >
                       <Link href={`/c/${c.id}`} className="block">
                         <div className="flex items-center justify-between gap-3">
-                          <div className="text-sm font-medium truncate">{c.title || "Untitled"}</div>
+                          <div className="text-sm font-medium truncate">{c.title || "Không có tiêu đề"}</div>
                           <div className="text-xs text-muted-foreground whitespace-nowrap">{formatDate(c.updatedAt as any)}</div>
                         </div>
                       </Link>
@@ -68,9 +68,9 @@ export default function ChatsResultsView({ chats, archived, className }: ChatsRe
             </div>
 
             <div>
-              <div className="mb-2 text-xs font-medium uppercase text-muted-foreground">Archived</div>
+              <div className="mb-2 text-xs font-medium uppercase text-muted-foreground">Đã lưu trữ</div>
               {archived.length === 0 ? (
-                <div className="text-sm text-muted-foreground">No results</div>
+                <div className="text-sm text-muted-foreground">Không có kết quả</div>
               ) : (
                 <ul className="space-y-2">
                   {archived.map(c => (
@@ -81,7 +81,7 @@ export default function ChatsResultsView({ chats, archived, className }: ChatsRe
                     >
                       <Link href={`/c/${c.id}`} className="block">
                         <div className="flex items-center justify-between gap-3">
-                          <div className="text-sm font-medium truncate">{c.title || "Untitled"}</div>
+                          <div className="text-sm font-medium truncate">{c.title || "Không có tiêu đề"}</div>
                           <div className="text-xs text-muted-foreground whitespace-nowrap">{formatDate(c.updatedAt as any)}</div>
                         </div>
                       </Link>

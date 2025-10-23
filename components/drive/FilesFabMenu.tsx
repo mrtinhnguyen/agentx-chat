@@ -20,19 +20,19 @@ export function FilesFabMenu() {
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent side="top" align="end" className="w-56">
-          <DropdownMenuLabel>New</DropdownMenuLabel>
+          <DropdownMenuLabel>Mới</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem>
             <FolderPlus className="mr-2 h-4 w-4" />
-            <span>New Folder</span>
+            <span>Thư mục mới</span>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <FileUp className="mr-2 h-4 w-4" />
-            <span>File Upload</span>
+            <span>Upload tài liệu</span>
           </DropdownMenuItem>
           <DropdownMenuItem>
             <FolderUp className="mr-2 h-4 w-4" />
-            <span>Folder Upload</span>
+            <span>Upload thư mục</span>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>

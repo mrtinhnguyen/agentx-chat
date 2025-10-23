@@ -37,7 +37,7 @@ export function RenameItemDialog({ open, onOpenChange, itemId, itemType, itemNam
       <DialogContent>
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
-          <DialogDescription>Enter a new name.</DialogDescription>
+          <DialogDescription>Nhập tên mới cho {itemType === 'folder' ? 'thư mục' : 'tệp'}</DialogDescription>
         </DialogHeader>
         <form action={onConfirm} className="space-y-4">
           <input type="hidden" name={idFieldName} value={itemId} />
@@ -45,12 +45,12 @@ export function RenameItemDialog({ open, onOpenChange, itemId, itemType, itemNam
             name={nameFieldName}
             value={name}
             onChange={(e) => setName(e.target.value)}
-            placeholder={itemType === 'folder' ? 'Folder name' : 'File name'}
+            placeholder={itemType === 'folder' ? 'Tên thư mục' : 'Tên tệp'}
             autoFocus
           />
           <div className="flex items-center justify-end gap-2">
-            <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>Cancel</Button>
-            <Button type="submit" disabled={!name.trim()}>Rename</Button>
+            <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>Hủy</Button>
+            <Button type="submit" disabled={!name.trim()}>Đổi tên</Button>
           </div>
         </form>
       </DialogContent>

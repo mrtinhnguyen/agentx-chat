@@ -34,7 +34,7 @@ export function DriveSyncAuto({ isConnected }: DriveSyncAutoProps) {
   return (
     <div className="flex items-center mr-2 text-xs text-foreground">
       <Loader2 className="h-3 w-3 animate-spin mr-1" />
-      <span>Syncing</span>
+      <span>Đang đồng bộ</span>
     </div>
   )
 }

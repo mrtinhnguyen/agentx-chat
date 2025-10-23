@@ -272,7 +272,7 @@ export function NavChats({ chats, timeZone = 'UTC' }: NavChatsProps) {
       const optimistic: ChatData = {
         id,
         userId: '',
-        title: 'New Chat',
+        title: 'Hội thoại mới',
         createdAt: now as any,
         updatedAt: now as any,
         messages: [],
@@ -325,7 +325,7 @@ export function NavChats({ chats, timeZone = 'UTC' }: NavChatsProps) {
                 {chats.length === 0 ? (
                   <SidebarMenuSubItem>
                     <div className="px-2 py-1 text-sm text-muted-foreground">
-                      No chats yet
+                      Không có hội thoại nào
                     </div>
                   </SidebarMenuSubItem>
                 ) : (

@@ -24,17 +24,17 @@ export function UploadFolderDialog({ open, onOpenChange, parent = "" }: UploadFo
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Upload folder</DialogTitle>
-          <DialogDescription>Select a folder to upload its contents.</DialogDescription>
+          <DialogTitle>Tải lên thư mục</DialogTitle>
+          <DialogDescription>Chọn thư mục để tải lên.</DialogDescription>
         </DialogHeader>
         <form action={onSubmit} className="space-y-3">
           <input type="hidden" name="parent" value={parent} />
           <div className="space-y-2">
-            <Label htmlFor="folder-input">Choose folder</Label>
+            <Label htmlFor="folder-input">Chọn thư mục</Label>
             <Input id="folder-input" name="files" type="file" multiple {...({ webkitdirectory: '' } as any)} {...({ directory: '' } as any)} />
           </div>
           <div className="flex justify-end">
-            <SaveStatusButton label="Upload" />
+            <SaveStatusButton label="Tải lên" />
           </div>
         </form>
       </DialogContent>

@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
 
       const headers: Record<string, string> = {
         'Accept': 'application/json',
-        'User-Agent': 'OpenChat-OllamaConnectionTest/1.0'
+        'User-Agent': 'AgentX-OllamaConnectionTest/1.0'
       }
       if (body.apiKey && String(body.apiKey).trim() !== '') {
         headers['Authorization'] = `Bearer ${String(body.apiKey).trim()}`

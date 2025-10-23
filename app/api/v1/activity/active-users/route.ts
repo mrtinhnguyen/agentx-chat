@@ -15,14 +15,14 @@ export async function GET(req: NextRequest) {
     // Allow all authenticated users to see the aggregate (adjust if needed)
 
     const cutoff = new Date(Date.now() - 30 * 1000)
-    // Use a simple query that works across SQLite/Postgres by passing a JS Date
+    // Use a PostgreSQL-compatible query with parameterized placeholders
     const rows = await db.$queryRawUnsafe<any[]>(
       `SELECT u.id as id, u.name as name, u.email as email, u.image as image,
               CAST(COUNT(t.tab_id) AS INTEGER) as tabs,
               MAX(t.last_seen_at) as lastSeenAt
        FROM tab_activity t
        JOIN users u ON u.id = t.user_id
-       WHERE t.last_seen_at > ?
+       WHERE t.last_seen_at > $1::timestamp
        GROUP BY u.id, u.name, u.email, u.image
        ORDER BY lastSeenAt DESC`,
       cutoff.toISOString()
@@ -39,7 +39,16 @@ export async function GET(req: NextRequest) {
       email: String(r.email),
       image: r.image == null ? null : String(r.image),
       tabs: Number(r.tabs),
-      lastSeenAt: typeof r.lastSeenAt === 'string' ? r.lastSeenAt : new Date(r.lastSeenAt).toISOString(),
+      lastSeenAt: (() => {
+        if (r.lastSeenAt == null) return null;
+        if (typeof r.lastSeenAt === 'string') return r.lastSeenAt;
+        try {
+          const date = new Date(r.lastSeenAt);
+          return isNaN(date.getTime()) ? null : date.toISOString();
+        } catch {
+          return null;
+        }
+      })(),
     }))
 
     return NextResponse.json({ users })

@@ -24,17 +24,17 @@ export function UploadFileDialog({ open, onOpenChange, parent = "" }: UploadFile
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Upload file</DialogTitle>
-          <DialogDescription>Select a file to upload.</DialogDescription>
+          <DialogTitle>Tải lên file</DialogTitle>
+          <DialogDescription>Chọn file để tải lên.</DialogDescription>
         </DialogHeader>
         <form action={onSubmit} className="space-y-3">
           <input type="hidden" name="parent" value={parent} />
           <div className="space-y-2">
-            <Label htmlFor="file-input">Choose file</Label>
+            <Label htmlFor="file-input">Chọn file</Label>
             <Input id="file-input" name="file" type="file" required />
           </div>
           <div className="flex justify-end">
-            <SaveStatusButton label="Upload" />
+            <SaveStatusButton label="Tải lên" />
           </div>
         </form>
       </DialogContent>

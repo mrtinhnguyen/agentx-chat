@@ -34,7 +34,7 @@ export function CsvViewer({ fileUrl }: CsvViewerProps) {
   if (loading) {
     return (
       <div className="flex flex-col items-center justify-center h-full gap-3">
-        <Loader className="h-6 w-6" message="Loading CSV" />
+        <Loader className="h-6 w-6" message="Đang tải CSV" />
       </div>
     )
   }
@@ -50,7 +50,7 @@ export function CsvViewer({ fileUrl }: CsvViewerProps) {
   if (!data || data.length === 0) {
     return (
       <div className="flex items-center justify-center h-full text-muted-foreground">
-        Empty CSV file
+        Tệp CSV trống
       </div>
     )
   }
@@ -70,17 +70,17 @@ export function CsvViewer({ fileUrl }: CsvViewerProps) {
           <div className="sticky top-0 z-10 bg-muted border-b-2 border-border">
             <div className="flex">
               {/* Row number column header */}
-              <div className="flex-shrink-0 w-12 border-r border-border bg-muted flex items-center justify-center font-semibold text-xs text-muted-foreground">
+              <div className="shrink-0 w-12 border-r border-border bg-muted flex items-center justify-center font-semibold text-xs text-muted-foreground">
                 #
               </div>
               {/* Column headers */}
               {headers.map((header, colIndex) => (
                 <div
                   key={colIndex}
-                  className="flex-shrink-0 border-r border-border px-2 py-2 font-semibold text-xs bg-muted flex items-center"
+                  className="shrink-0 border-r border-border px-2 py-2 font-semibold text-xs bg-muted flex items-center"
                   style={{ width: `${cellWidth}px` }}
                 >
-                  <span className="break-words" title={header}>
+                  <span className="wrap-break-word" title={header}>
                     {header || String.fromCharCode(65 + colIndex)}
                   </span>
                 </div>
@@ -93,7 +93,7 @@ export function CsvViewer({ fileUrl }: CsvViewerProps) {
             {rows.map((row, rowIndex) => (
               <div key={rowIndex} className="flex border-b border-border hover:bg-muted/50">
                 {/* Row number */}
-                <div className="flex-shrink-0 w-12 border-r border-border bg-muted/30 flex items-center justify-center text-xs text-muted-foreground font-mono">
+                <div className="shrink-0 w-12 border-r border-border bg-muted/30 flex items-center justify-center text-xs text-muted-foreground font-mono">
                   {rowIndex + 1}
                 </div>
                 {/* Cells */}
@@ -102,7 +102,7 @@ export function CsvViewer({ fileUrl }: CsvViewerProps) {
                   return (
                     <div
                       key={cellIndex}
-                      className={`flex-shrink-0 border-r border-border px-2 py-1.5 text-xs cursor-cell transition-colors ${
+                      className={`shrink-0 border-r border-border px-2 py-1.5 text-xs cursor-cell transition-colors ${
                         isSelected 
                           ? 'bg-blue-100 dark:bg-blue-900/30 ring-2 ring-blue-500 ring-inset' 
                           : 'hover:bg-accent/50'
@@ -111,7 +111,7 @@ export function CsvViewer({ fileUrl }: CsvViewerProps) {
                       onClick={() => setSelectedCell({ row: rowIndex, col: cellIndex })}
                       title={cell}
                     >
-                      <span className="block break-words">{cell}</span>
+                      <span className="block wrap-break-word">{cell}</span>
                     </div>
                   )
                 })}
@@ -124,11 +124,11 @@ export function CsvViewer({ fileUrl }: CsvViewerProps) {
       {/* Status bar */}
       <div className="border-t bg-muted/30 px-4 py-2 text-xs text-muted-foreground flex items-center justify-between">
         <div>
-          {rows.length.toLocaleString()} rows × {headers.length} columns
+          {rows.length.toLocaleString()} dòng × {headers.length} cột
         </div>
         {selectedCell && (
           <div className="font-mono">
-            Cell: {String.fromCharCode(65 + selectedCell.col)}{selectedCell.row + 1}
+            Ô: {String.fromCharCode(65 + selectedCell.col)}{selectedCell.row + 1}
           </div>
         )}
       </div>

@@ -21,19 +21,19 @@ export default async function ModelsResults({ userId, query, mentions }: ModelsR
   }
 
   return (
-    <div className="mt-4 space-y-6 min-w-[6rem] mx-56">
+    <div className="mt-4 space-y-6 min-w-24 mx-56">
       <div>
         {(() => {
           const active = models.filter((m: any) => m?.isActive !== false)
           const inactive = models.filter((m: any) => m?.isActive === false)
           if (active.length === 0 && inactive.length === 0) {
-            return <div className="text-sm text-muted-foreground">No results</div>
+            return <div className="text-sm text-muted-foreground">Không có kết quả</div>
           }
           return (
             <div className="space-y-6">
               {active.length > 0 && (
                 <div>
-                  <div className="mb-2 text-xs font-medium uppercase text-muted-foreground">Active</div>
+                  <div className="mb-2 text-xs font-medium uppercase text-muted-foreground">Hoạt động</div>
                   <ul className="space-y-2">
                     {active.map((m: any) => {
                       const providerModelId = (m as any).providerId || m.id
@@ -45,7 +45,7 @@ export default async function ModelsResults({ userId, query, mentions }: ModelsR
                             <div className="flex items-center justify-between gap-3">
                               <div className="flex items-center gap-2 min-w-0 flex-1">
                                 <Avatar className="h-5 w-5">
-                                  <AvatarImage src={m?.meta?.profile_image_url || "/OpenChat.png"} alt={m?.name || "Model"} />
+                                  <AvatarImage src={m?.meta?.profile_image_url || "/ai-agents.gif"} alt={m?.name || "Model"} />
                                   <AvatarFallback>{String(m?.name || '?').charAt(0).toUpperCase()}</AvatarFallback>
                                 </Avatar>
                                 <div className="text-sm font-medium">{m.name}</div>
@@ -66,7 +66,7 @@ export default async function ModelsResults({ userId, query, mentions }: ModelsR
 
               {inactive.length > 0 && (
                 <div>
-                  <div className="mb-2 text-xs font-medium uppercase text-muted-foreground">Inactive</div>
+                  <div className="mb-2 text-xs font-medium uppercase text-muted-foreground">Không hoạt động</div>
                   <ul className="space-y-2">
                     {inactive.map((m: any) => {
                       const providerModelId = (m as any).providerId || m.id
@@ -78,7 +78,7 @@ export default async function ModelsResults({ userId, query, mentions }: ModelsR
                             <div className="flex items-center justify-between gap-3">
                               <div className="flex items-center gap-2 min-w-0 flex-1">
                                 <Avatar className="h-5 w-5">
-                                  <AvatarImage src={m?.meta?.profile_image_url || "/OpenChat.png"} alt={m?.name || "Model"} />
+                                  <AvatarImage src={m?.meta?.profile_image_url || "/ai-agents.gif"} alt={m?.name || "Model"} />
                                   <AvatarFallback>{String(m?.name || '?').charAt(0).toUpperCase()}</AvatarFallback>
                                 </Avatar>
                                 <div className="text-sm font-medium truncate">{m.name}</div>
@@ -87,7 +87,7 @@ export default async function ModelsResults({ userId, query, mentions }: ModelsR
                                 {m.provider && (
                                   <div className="text-xs text-muted-foreground truncate max-w-[50%] text-right">{String(m.provider)}</div>
                                 )}
-                                <Badge variant="secondary" className="text-[10px] px-2 py-0 h-5 shrink-0">Inactive</Badge>
+                                <Badge variant="secondary" className="text-[10px] px-2 py-0 h-5 shrink-0">Không hoạt động</Badge>
                               </div>
                             </div>
                           </Link>

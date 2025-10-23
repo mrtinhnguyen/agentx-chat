@@ -37,16 +37,16 @@ export function CreateContextMenu({ parentId = "", children, disabled = false }:
       <ContextMenuContent className="w-56">
         <ContextMenuItem onSelect={(e) => { e.preventDefault(); setShowNewFolder(true) }}>
           <FolderPlus className="mr-2 h-4 w-4" />
-          <span>New Folder</span>
+          <span>Thư mục mới</span>
         </ContextMenuItem>
         <ContextMenuSeparator />
         <ContextMenuItem onSelect={(e) => { e.preventDefault(); setShowUploadFile(true) }}>
           <FileUp className="mr-2 h-4 w-4" />
-          <span>File Upload</span>
+          <span>Tải lên file</span>
         </ContextMenuItem>
         <ContextMenuItem onSelect={(e) => { e.preventDefault(); setShowUploadFolder(true) }}>
           <FolderUp className="mr-2 h-4 w-4" />
-          <span>Folder Upload</span>
+          <span>Tải lên thư mục</span>
         </ContextMenuItem>
       </ContextMenuContent>
 

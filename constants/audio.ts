@@ -1,31 +1,31 @@
 export const MESSAGES = {
   TITLE: "Audio",
-  DESCRIPTION: "Manage Text-to-Speech (TTS) and Speech-to-Text (STT) providers, voices, and settings.",
-  LOADING: "Loading audio settings...",
+  DESCRIPTION: "Quản lý Text-to-Speech (TTS) và Speech-to-Text (STT) providers, voices, và cài đặt.",
+  LOADING: "Đang tải cài đặt âm thanh...",
 
-  TTS_TITLE: "Text-to-Speech",
-  TTS_DESCRIPTION: "Enable TTS and manage available voices and providers.",
-  TTS_ENABLE_LABEL: "Enable TTS",
-  TTS_ENABLE_HINT: "Allow generating audio from assistant responses.",
-  TTS_VOICES_LABEL: "Voices",
-  TTS_VOICES_HINT: "Configure available voices and defaults.",
+  TTS_TITLE: "Text-to-Speech (TTS) ",
+  TTS_DESCRIPTION: "Kích hoạt TTS và quản lý các giọng nói và nhà cung cấp.",
+  TTS_ENABLE_LABEL: "Kích hoạt TTS",
+  TTS_ENABLE_HINT: "Cho phép tạo âm thanh từ các phản hồi của trợ lý.",
+  TTS_VOICES_LABEL: "Giọng nói",
+  TTS_VOICES_HINT: "Cấu hình các giọng nói và mặc định.",
 
   STT_TITLE: "Speech-to-Text",
-  STT_DESCRIPTION: "Enable STT and manage recognition models and providers.",
-  STT_ENABLE_LABEL: "Enable STT",
-  STT_ENABLE_HINT: "Allow users to dictate messages via microphone.",
-  STT_MODELS_LABEL: "Models",
-  STT_MODELS_HINT: "Configure available recognition models and defaults.",
-  STT_PROVIDER_LABEL: "Provider",
-  STT_PROVIDER_HINT: "Choose a speech-to-text provider.",
+  STT_DESCRIPTION: "Kích hoạt STT và quản lý mô hình nhận dạng và nhà cung cấp.",
+  STT_ENABLE_LABEL: "Kích hoạt STT",
+  STT_ENABLE_HINT: "Cho phép người dùng nói ra tin nhắn qua micro.",
+  STT_MODELS_LABEL: "Mô hình",
+  STT_MODELS_HINT: "Cấu hình các mô hình nhận dạng và mặc định.",
+  STT_PROVIDER_LABEL: "Nhà cung cấp",
+  STT_PROVIDER_HINT: "Chọn nhà cung cấp từ giọng nói sang văn bản.",
   STT_PROVIDER_WHISPER_WEB: "Whisper Web (local)",
   STT_PROVIDER_OPENAI: "OpenAI",
   STT_PROVIDER_WEB_API: "Web API",
   STT_PROVIDER_DEEPGRAM: "Deepgram",
-  STT_WHISPER_MODEL_LABEL: "Model",
-  STT_WHISPER_MODEL_HELP: "You can select models from Hugging Face.",
+  STT_WHISPER_MODEL_LABEL: "Mô hình",
+  STT_WHISPER_MODEL_HELP: "Bạn có thể chọn mô hình từ Hugging Face.",
 
-  MANAGE: "Manage"
+  MANAGE: "Quản lý"
 } as const
 
 

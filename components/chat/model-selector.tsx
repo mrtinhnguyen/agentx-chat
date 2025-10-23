@@ -114,7 +114,7 @@ export function ModelSelector({ selectedModelId, onModelSelect, models = [], cur
                 <>
                   <Avatar className="h-8 w-8 bg-transparent">
                     <AvatarImage
-                      src={selectedModel.meta?.profile_image_url || "/OpenChat.png"}
+                      src={selectedModel.meta?.profile_image_url || "/ai-agents.gif"}
                       alt={selectedModel.name}
                       className="bg-transparent"
                     />
@@ -143,7 +143,7 @@ export function ModelSelector({ selectedModelId, onModelSelect, models = [], cur
               ) : (
                 <>
                   <Cpu className="h-5 w-5" />
-                  <span className="text-muted-foreground">Select model...</span>
+                  <span className="text-muted-foreground">Chọn mô hình...</span>
                 </>
               )}
             </div>
@@ -155,9 +155,9 @@ export function ModelSelector({ selectedModelId, onModelSelect, models = [], cur
           className="w-fit min-w-[300px] p-0 shadow-lg border scrollbar-hide"
         >
           <Command className="scrollbar-hide">
-            <CommandInput placeholder="Search models..."/>
+            <CommandInput placeholder="Tìm kiếm mô hình..."/>
             <CommandList className="scrollbar-hide">
-              <CommandEmpty>No models found.</CommandEmpty>
+              <CommandEmpty>Không tìm thấy mô hình nào.</CommandEmpty>
               {activeModels.length > 0 && (
                 <CommandGroup>
                   {activeModels.map((model) => (
@@ -175,7 +175,7 @@ export function ModelSelector({ selectedModelId, onModelSelect, models = [], cur
                       
                       <Avatar className="h-8 w-8 mr-2 bg-transparent">
                         <AvatarImage
-                          src={model.meta?.profile_image_url || "/OpenChat.png"}
+                          src={model.meta?.profile_image_url || "/ai-agents.gif"}
                           alt={model.name}
                           className="bg-transparent"
                         />
@@ -230,12 +230,12 @@ export function ModelSelector({ selectedModelId, onModelSelect, models = [], cur
                               {pinnedIds.includes(model.id) ? (
                                 <DropdownMenuItem onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleUnpinModelById(model.id) }}>
                                   <EyeOff className="mr-2 h-4 w-4" />
-                                  Hide from Sidebar
+                                  Ẩn khỏi thanh bên
                                 </DropdownMenuItem>
                               ) : (
                                 <DropdownMenuItem onClick={(e) => { e.preventDefault(); e.stopPropagation(); handlePinModelById(model.id) }}>
                                   <Eye className="mr-2 h-4 w-4" />
-                                  Keep in Sidebar
+                                  Giữ trong thanh bên
                                 </DropdownMenuItem>
                               )}
                             </DropdownMenuContent>
@@ -259,12 +259,12 @@ export function ModelSelector({ selectedModelId, onModelSelect, models = [], cur
                               {pinnedIds.includes(model.id) ? (
                                 <DropdownMenuItem onClick={(e) => { e.preventDefault(); e.stopPropagation(); handleUnpinModelById(model.id) }}>
                                   <EyeOff className="mr-2 h-4 w-4" />
-                                  Hide from Sidebar
+                                  Ẩn khỏi thanh bên
                                 </DropdownMenuItem>
                               ) : (
                                 <DropdownMenuItem onClick={(e) => { e.preventDefault(); e.stopPropagation(); handlePinModelById(model.id) }}>
                                   <Eye className="mr-2 h-4 w-4" />
-                                  Keep in Sidebar
+                                  Giữ trong thanh bên
                                 </DropdownMenuItem>
                               )}
                             </DropdownMenuContent>

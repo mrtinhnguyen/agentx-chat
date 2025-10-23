@@ -80,36 +80,36 @@ export function ItemContextMenu({ itemId, itemType, children, onMove, onDownload
       <ContextMenuContent className="w-56">
         <ContextMenuItem onSelect={(e) => { e.preventDefault(); handleDownload() }}>
           <Download className="mr-2 h-4 w-4" />
-          Download
+          Tải về
         </ContextMenuItem>
         <ContextMenuItem onSelect={(e) => { e.preventDefault(); onRename?.() }}>
           <PencilLine className="mr-2 h-4 w-4" />
-          Rename
+          Đổi tên
         </ContextMenuItem>
         {onPreview ? (
           <ContextMenuItem onSelect={(e) => { e.preventDefault(); onPreview?.() }}>
             <PencilLine className="mr-2 h-4 w-4" />
-            Preview
+            Xem trước
           </ContextMenuItem>
         ) : null}
         <ContextMenuSeparator />
         <ContextMenuSub>
           <ContextMenuSubTrigger>
             <FolderOpen className="mr-2 h-4 w-4" />
-            Organize
+            Sắp xếp
           </ContextMenuSubTrigger>
           <ContextMenuSubContent className="w-48">
             <ContextMenuItem onSelect={(e) => { e.preventDefault(); onMove() }}>
               <FolderInput className="mr-2 h-4 w-4" />
-              Move
+              Di chuyển
             </ContextMenuItem>
             <ContextMenuItem onSelect={(e) => { e.preventDefault(); onAddShortcut?.() }}>
               <Redo className="mr-2 h-4 w-4" />
-              Add shortcut
+              Thêm shortcut
             </ContextMenuItem>
             <ContextMenuItem onSelect={(e) => { e.preventDefault(); onAddStarred?.() }}>
               <Star className="mr-2 h-4 w-4" />
-              Add to starred
+              Thêm vào đánh dấu quan trọng
             </ContextMenuItem>
           </ContextMenuSubContent>
         </ContextMenuSub>

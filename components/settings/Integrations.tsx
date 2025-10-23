@@ -32,7 +32,7 @@ export async function Integrations() {
               Google Drive
             </CardTitle>
             <CardDescription className='w-52'>
-              Connect Google Drive to browse and import files.
+              Kết nối Google Drive để duyệt và nhập tệp.
             </CardDescription>
             <CardAction>
               {isConnected ? (
@@ -75,7 +75,7 @@ export async function Integrations() {
                       revalidatePath('/settings/integrations')
                     }}
                   >
-                    <Button variant="destructive">Disconnect</Button>
+                    <Button variant="destructive">Ngắt kết nối</Button>
                   </form>
                 </div>
               ) : (
@@ -85,7 +85,7 @@ export async function Integrations() {
                     await signIn('google-drive')
                   }}
                 >
-                  <Button variant="outline">Connect</Button>
+                  <Button variant="outline">Kết nối</Button>
                 </form>
               )}
             </CardAction>

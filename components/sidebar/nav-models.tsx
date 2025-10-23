@@ -30,7 +30,7 @@ export function NavModels({ pinnedModels, currentUserId }: { pinnedModels: Model
                     return (
                       <Link href={href} className="flex items-center gap-2">
                         <Avatar className="h-5 w-5">
-                          <AvatarImage src={model?.meta?.profile_image_url || "/OpenChat.png"} alt={model.name} />
+                          <AvatarImage src={model?.meta?.profile_image_url || "/ai-agents.gif"} alt={model.name} />
                           <AvatarFallback>{String(model?.name || '?').charAt(0).toUpperCase()}</AvatarFallback>
                         </Avatar>
                         <span className="truncate pb-1">{model.name}</span>

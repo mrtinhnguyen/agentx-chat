@@ -107,7 +107,7 @@ export function PreviewDialog({ open, onOpenChange, name, url, mimeType, fileId 
               {kind === "google-workspace" && mimeType === 'application/vnd.google-apps.document' && fileId ? (
                 <a href={`/drive/open/${encodeURIComponent(fileId)}`}>
                   <Button variant="default" size="sm" className="gap-2">
-                    Open in Editor
+                    Mở trong trình chỉnh sửa
                   </Button>
                 </a>
               ) : null}
@@ -140,7 +140,7 @@ export function PreviewDialog({ open, onOpenChange, name, url, mimeType, fileId 
             )}
             {kind === "other" && (
               <div className="w-full h-full flex items-center justify-center text-muted-foreground text-sm">
-                Preview not available. Use the Download button to view this file.
+                Xem trước không khả dụng. Hãy dùng nút Tải về để xem tệp này.
               </div>
             )}
           </div>

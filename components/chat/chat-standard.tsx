@@ -109,18 +109,18 @@ export function ChatStandard({
           ? meta.assistantDisplayName
           : (meta?.model?.name || '')
           || selectedModel?.name
-          || 'AI Assistant'
+          || 'Trợ lý AI'
         const imageUrl = (meta.assistantImageUrl && typeof meta.assistantImageUrl === 'string')
           ? meta.assistantImageUrl
           : (meta?.model?.profile_image_url || '')
           || selectedModel?.meta?.profile_image_url
-          || '/avatars/01.png'
+          || '/ai-agents.gif'
         return { displayName: name, imageUrl }
       }
     }
     return {
-      displayName: selectedModel?.name || 'AI Assistant',
-      imageUrl: selectedModel?.meta?.profile_image_url || '/avatars/01.png'
+      displayName: selectedModel?.name || 'Trợ lý AI',
+      imageUrl: selectedModel?.meta?.profile_image_url || '/ai-agents.gif'
     }
   }, [messages, selectedModel])
 

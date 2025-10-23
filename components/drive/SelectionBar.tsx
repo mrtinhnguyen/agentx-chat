@@ -22,7 +22,7 @@ export function SelectionBar({ count, onClear, onTrashSelected, onDownloadSelect
         <button aria-label="Clear selection" onClick={onClear} className="rounded-full p-1 hover:bg-background/60">
           <X className="h-4 w-4" />
         </button>
-        <span className="font-medium">{count} selected</span>
+        <span className="font-medium">{count} tài liệu đã chọn</span>
       </div>
       <div className="flex items-center gap-3 text-muted-foreground">
         <button className="rounded p-1 hover:bg-background/60" aria-label="Share"><UserPlus className="h-4 w-4" /></button>

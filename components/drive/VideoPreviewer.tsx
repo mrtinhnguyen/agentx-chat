@@ -34,10 +34,10 @@ export default function VideoPreviewer({ url, name }: VideoPreviewerProps) {
         preload="metadata"
         playsInline
         className="max-w-[min(1200px,98vw)] max-h-[calc(100vh-6rem)] rounded-md shadow"
-        aria-label={`Video preview for ${name}`}
+        aria-label={`Xem video ${name}`}
       >
         <source src={url} {...(type ? { type } : {})} />
-        Your browser does not support the video tag.
+        Trình duyệt của bạn không hỗ trợ thẻ video.
       </video>
     </div>
   )

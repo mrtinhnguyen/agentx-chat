@@ -17,17 +17,17 @@ export function OfficeViewer({ fileUrl, fileName }: OfficeViewerProps) {
     <div className="w-full h-full flex flex-col bg-background">
       {error ? (
         <div className="flex-1 flex flex-col items-center justify-center text-muted-foreground p-8 text-center">
-          <p className="mb-4">Unable to preview this document.</p>
+          <p className="mb-4">Không thể xem trước tài liệu này.</p>
           <p className="text-sm">
-            The document viewer requires a publicly accessible URL. 
-            Please download the file to view it.
+            Yêu cầu URL công khai để xem trước tài liệu. 
+            Hãy tải về tệp để xem nó.
           </p>
         </div>
       ) : (
         <iframe
           src={viewerUrl}
           className="w-full h-full border-0"
-          title={`Preview of ${fileName}`}
+          title={`Xem trước ${fileName}`}
           onError={() => setError(true)}
         />
       )}

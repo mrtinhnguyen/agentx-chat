@@ -45,7 +45,7 @@ export function DriveStorageInfo() {
   return (
     <div className="border-t pt-4 pb-2 px-2 space-y-2 mt-auto">
       <div className="flex items-center justify-between text-xs">
-        <span className="text-muted-foreground">Storage</span>
+        <span className="text-muted-foreground">Dung lượng lưu trữ</span>
         <span className="text-muted-foreground">{percentage.toFixed(0)}%</span>
       </div>
       <Progress value={percentage} className="h-2" />

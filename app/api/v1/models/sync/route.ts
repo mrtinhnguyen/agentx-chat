@@ -246,7 +246,7 @@ export async function POST(request: NextRequest) {
       const logoUrl = (await findLogoUrlForModel(m.name)) || m.meta?.profile_image_url || null
       const enhancedMeta = {
         // Keep these specific fields at top level
-        profile_image_url: logoUrl || "/OpenChat.png",
+        profile_image_url: logoUrl || "/ai-agents.gif",
         description: m.meta?.description || null,
         tags: m.meta?.tags || null,
         tools: m.meta?.tools || null,

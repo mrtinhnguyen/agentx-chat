@@ -13,18 +13,14 @@ export function SidebarLogo() {
   return (
     <div className="flex items-center pl-1 pr-2 py-2">
       <Link href="/" aria-label="Go to home" className="flex items-center gap-3 flex-1 h-full">
-        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-primary">
+
           <Image
-            src="/OpenChat.png"
-            alt="OpenChat"
-            width={24}
-            height={24}
-            className="h-6 w-6 rounded-full"
+            src="/AgentXLogo-W.png"
+            alt="AgentX"
+            width={140}
+            height={80}
+            className="object-contain"
           />
-        </div>
-        {state === "expanded" && (
-          <span className="text-xl font-semibold text-foreground">OpenChat</span>
-        )}
       </Link>
       {state === "expanded" && (
         <Button

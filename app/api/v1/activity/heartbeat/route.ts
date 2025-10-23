@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
     // Use SQL upsert to avoid relying on generated Prisma types for the new model
     await db.$executeRawUnsafe(
       `INSERT INTO tab_activity (id, user_id, session_id, tab_id, last_seen_at, path, user_agent, created_at, updated_at)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+       VALUES ($1, $2, $3, $4, $5::timestamp, $6, $7, $8::timestamp, $9::timestamp)
        ON CONFLICT(user_id, tab_id) DO UPDATE SET last_seen_at = excluded.last_seen_at, path = excluded.path, user_agent = excluded.user_agent, updated_at = excluded.updated_at`,
       randomUUID(),
       userId,

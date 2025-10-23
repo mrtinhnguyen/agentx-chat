@@ -13,37 +13,37 @@ export interface AdminNavItem {
 export const ADMIN_NAV_ITEMS: AdminNavItem[] = [
     {
         id: "users",
-        label: "Users",
+        label: "Người dùng",
         icon: Users,
         href: "/admin/users"
     },
     {
         id: "drive",
-        label: "Drive",
+        label: "Lưu trữ Drive",
         icon: HardDrive,
         href: "/admin/drive"
     },
     {
         id: "connections",
-        label: "Connections",
+        label: "Kết nối",
         icon: LinkIcon,
         href: "/admin/connections"
     },
     {
         id: "models",
-        label: "Models",
+        label: "Mô hình",
         icon: Box,
         href: "/admin/models"
     },
     {
         id: "audio",
-        label: "Audio",
+        label: "Âm thanh",
         icon: Mic,
         href: "/admin/audio"
     },
     {
         id: "image",
-        label: "Image",
+        label: "Hình ảnh",
         icon: ImageIcon,
         href: "/admin/image"
     },
@@ -55,7 +55,7 @@ export const ADMIN_NAV_ITEMS: AdminNavItem[] = [
     },
     {
       id: "websearch",
-      label: "Web Search",
+      label: "Tìm kiếm Web",
       icon: Globe,
       href: "/admin/websearch"
     },

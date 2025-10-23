@@ -16,7 +16,7 @@ interface SearchBarProps {
 export function SearchBar({
   query,
   initialMentions = [],
-  placeholder = "Search or use @",
+  placeholder = "Tìm kiếm hoặc sử dụng @",
   className,
 }: SearchBarProps) {
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -227,7 +227,7 @@ export function SearchBar({
               autoComplete="off"
               className={cn(
                 // make input behave like inline text alongside badges
-                "h-8 border-0 bg-transparent dark:bg-transparent shadow-none flex-1 min-w-[6rem] px-0",
+                "h-8 border-0 bg-transparent dark:bg-transparent shadow-none flex-1 min-w-24 px-0",
                 "focus-visible:ring-0 focus-visible:ring-offset-0",
                 "text-[16px] md:text-[16px]"
               )}

@@ -35,8 +35,8 @@ export default function ChatMessages({
   messages,
   isLoading,
   error,
-  assistantDisplayName = 'AI Assistant',
-  assistantImageUrl = '/avatars/01.png',
+  assistantDisplayName = 'Trợ lý AI',
+  assistantImageUrl = '/ai-agents.gif',
   timeZone = 'UTC',
   toolsAvailable = true,
   webSearchAllowed = true,
@@ -48,7 +48,7 @@ export default function ChatMessages({
 
   function formatToolLabel(raw?: string): string {
     const input = String(raw || '').trim()
-    if (!input) return 'Tool'
+    if (!input) return 'Công cụ'
     // Normalize separators to spaces
     let s = input.replace(/[._-]+/g, ' ')
     // Insert spaces between camelCase or PascalCase boundaries
@@ -234,8 +234,8 @@ export default function ChatMessages({
       <div className="w-full h-full flex-1 min-h-0 flex items-center justify-center">
         <div className="text-center text-muted-foreground">
           <Bot className="h-12 w-12 mx-auto mb-4 opacity-50" />
-          <h3 className="text-lg font-medium mb-2">Start a conversation</h3>
-          <p className="text-sm">Send a message to begin chatting with the AI assistant.</p>
+          <h3 className="text-lg font-medium mb-2">Bắt đầu một cuộc trò chuyện</h3>
+          <p className="text-sm">Gửi một tin nhắn để bắt đầu trò chuyện với trợ lý AI.</p>
         </div>
       </div>
     )

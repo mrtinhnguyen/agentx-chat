@@ -18,7 +18,7 @@ export default async function ChatsResults({ userId, query, mentions }: ChatsRes
     return (
       <div className="mt-4 space-y-6">
         <div>
-          <div className="mb-2 text-xs font-medium uppercase text-muted-foreground">Chats</div>
+          <div className="mb-2 text-xs font-medium uppercase text-muted-foreground">Cuộc trò chuyện</div>
           <SearchInfinite initialItems={page.items as ChatData[]} initialNextOffset={page.nextOffset} initialHasMore={page.hasMore} />
         </div>
       </div>

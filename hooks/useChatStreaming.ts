@@ -30,7 +30,7 @@ export function useChatStreaming({ chatId, initialModels, selectedModel }: UseCh
   const resolveModelDisplay = (providerModelId: string, fallback?: Model) => {
     const byId = initialModels.find(m => m.id === providerModelId || (m as any).providerId === providerModelId)
     const name = byId?.name || fallback?.name || providerModelId
-    const image = (byId as any)?.meta?.profile_image_url || fallback?.meta?.profile_image_url || '/OpenChat.png'
+    const image = (byId as any)?.meta?.profile_image_url || fallback?.meta?.profile_image_url || '/ai-agents.gif'
     return { name, image }
   }
 

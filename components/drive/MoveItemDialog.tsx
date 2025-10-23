@@ -98,13 +98,13 @@ export function MoveItemDialog({ open, onOpenChange, itemId, itemType, itemName,
       <DialogContent>
         <DialogHeader>
           <DialogTitle>{title}</DialogTitle>
-          <DialogDescription>Select a destination folder.</DialogDescription>
+          <DialogDescription>Chọn thư mục đích</DialogDescription>
         </DialogHeader>
         <div className="space-y-3">
-          <div className="text-sm text-muted-foreground">Current location: {currentParentName || 'Root'}</div>
+          <div className="text-sm text-muted-foreground">Vị trí hiện tại: {currentParentName || 'Root'}</div>
           {error && <div className="text-red-600 text-sm">{error}</div>}
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="icon" onClick={handleBack} disabled={crumbs.length === 0} aria-label="Back">
+            <Button variant="ghost" size="icon" onClick={handleBack} disabled={crumbs.length === 0} aria-label="Trở về">
               <ArrowLeft className="h-4 w-4" />
             </Button>
             <div className="min-w-0">
@@ -131,9 +131,9 @@ export function MoveItemDialog({ open, onOpenChange, itemId, itemType, itemName,
           </div>
           <div className="rounded-md max-h-64 overflow-auto">
             {loading ? (
-              <div className="p-2 text-sm text-muted-foreground">Loading…</div>
+              <div className="p-2 text-sm text-muted-foreground">Đang tải...</div>
             ) : folders.length === 0 ? (
-              <div className="p-2 text-sm text-muted-foreground">No subfolders</div>
+              <div className="p-2 text-sm text-muted-foreground">Không có thư mục con</div>
             ) : (
               <ul className="px-1 py-1 space-y-1">
                 {folders.map(f => (
@@ -147,7 +147,7 @@ export function MoveItemDialog({ open, onOpenChange, itemId, itemType, itemName,
           <form action={onConfirm} className="flex items-center justify-end gap-2">
             <input type="hidden" name={idFieldName} value={itemId} />
             <input type="hidden" name="targetParentId" value={currentParent} />
-            <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>Cancel</Button>
+            <Button type="button" variant="outline" onClick={() => onOpenChange(false)}>Hủy</Button>
             <Button type="submit">Move here</Button>
           </form>
         </div>

@@ -26,23 +26,23 @@ export function AdminSetupForm() {
   return (
     <form action={formAction} className="flex flex-col gap-3">
       <div className="grid gap-2 text-left">
-        <label className="text-sm font-medium">Username</label>
-        <Input name="username" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Admin username" type="text" required autoComplete="username" />
+        <label className="text-sm font-medium">Tên người dùng</label>
+        <Input name="username" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Tên người dùng của bạn" type="text" required autoComplete="username" />
       </div>
       <div className="grid gap-2 text-left">
-        <label className="text-sm font-medium">Email</label>
+        <label className="text-sm font-medium">Email của bạn</label>
         <Input name="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="you@example.com" type="email" required autoComplete="email" />
       </div>
       <div className="grid gap-2 text-left">
-        <label className="text-sm font-medium">Password</label>
-        <Input name="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password (min 8 characters)" type="password" required autoComplete="new-password" />
+        <label className="text-sm font-medium">Mật khẩu</label>
+        <Input name="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Mật khẩu (ít nhất 8 ký tự)" type="password" required autoComplete="new-password" />
       </div>
       <div className="grid gap-2 text-left">
-        <Input name="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Confirm password" type="password" required autoComplete="new-password" />
+        <Input name="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder="Xác nhận mật khẩu" type="password" required autoComplete="new-password" />
       </div>
 
       <Button variant="outline" className="w-full mt-2" type="submit">
-        Create Admin Account
+        Tạo tài khoản quản trị viên
       </Button>
 
       {state.status === 'error' && (
@@ -52,7 +52,7 @@ export function AdminSetupForm() {
       )}
       {state.status === 'success' && (
         <div className="bg-green-50 border border-green-200 rounded-md p-3 text-sm text-green-700">
-          {state.message || 'Admin account created.'}
+          {state.message || 'Tài khoản quản trị viên đã được tạo.'}
         </div>
       )}
     </form>
